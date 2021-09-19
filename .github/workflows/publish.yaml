@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: read
-      checks: write
+      checks: read
+      contents: write
       issues: read
       packages: write
       pull-requests: read
