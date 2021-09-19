@@ -86,9 +86,9 @@ jobs:
           load: true
           push: false
           tags: |
-            ghcr.io/${{ steps.get_repo_owner.outputs.repo_owner }}/faas-cli:${{ steps.get_tag.outputs.TAG }}
+            openfaas/faas-cli:${{ steps.get_tag.outputs.TAG }}
       - name: Copy binaries to host
-        run: REPO_ONWER=${{ steps.get_repo_owner.outputs.repo_owner }} ./build_redist.sh ${{ steps.get_tag.outputs.TAG }}
+        run: ./build_redist.sh ${{ steps.get_tag.outputs.TAG }}
       - name: Create SHA of binaries
         run: cd bin && ../ci/hashgen.sh && cd ../
       - name: Upload binaries and their SHA to Github Release
